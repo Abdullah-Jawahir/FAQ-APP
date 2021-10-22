@@ -62,7 +62,6 @@ body {
             border-top: 1px solid gray;
             border-bottom: 1px solid gray;
             padding: 10px 5px 10px 5px;
-            transition: all 3s ease-in-out;
         }
 
         .visible-info {
@@ -82,6 +81,7 @@ body {
                 font-weight: bold;
                 font-size: 1.1rem;
                 cursor: pointer;
+                transition: .4s;
             }
 
             .subract-icon {
@@ -93,15 +93,34 @@ body {
 
         .hidden-info {
 
-            margin-top: 5px;
-            display: none;
-            transition: all 3s ease-in-out;
+            height: 0;
+            overflow: hidden;
+            transition: .3s;
+            overflow-y: auto;
+            opacity: 0;
         
             .info {
                 font-size: .9rem;
                 margin-right: 20px;
+                transition: 1s;
             }
         }
+
+        .question-box {
+
+            &.expander {
+
+                .hidden-info {
+
+                    opacity: 1;
+                    height: max-content;
+                    margin-top: 5px;
+                }
+
+
+            }
+        }
+
     }
 }
 

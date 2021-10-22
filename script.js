@@ -8,15 +8,7 @@ addIcon.forEach((icon, iconIndex) => {
     icon.addEventListener('click', (me) => {
         questionBox.forEach((question, questionIndex) => {
             if ( iconIndex === questionIndex ) {
-                question.style.height = 'max-content';
-                question.style.transition = 'all 6s ease-out';
-            }
-        });
-
-        hiddenInfo.forEach((info, infoIndex) => {
-            if ( iconIndex === infoIndex ) {
-                info.style.display = 'block';
-                info.style.transition = 'all 6s ease-out';
+                question.classList.add('expander');
             }
         });
 
@@ -31,20 +23,14 @@ subtractIcon.forEach((icon, iconIndex) => {
     icon.addEventListener('click', (me) => {
         questionBox.forEach((question, questionIndex) => {
             if ( iconIndex === questionIndex ) {
-                question.style.height = 'auto';
-            }
-        });
-
-        hiddenInfo.forEach((info, infoIndex) => {
-            if ( iconIndex === infoIndex ) {
-                info.style.display = 'none';
+                question.classList.remove('expander');
             }
         });
 
         me.target.previousElementSibling.style.display = 'block';
         me.target.style.display = 'none';   
     });
-})
+});
 
 
 
