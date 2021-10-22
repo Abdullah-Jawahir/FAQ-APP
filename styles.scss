@@ -1,0 +1,128 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* , *::after, *::before{
+
+    box-sizing: border-box;
+}
+
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E2244;
+    overflow: hidden;
+}
+
+.container {
+
+    width: 80%;
+    margin-top: 60px;
+    background-color: whitesmoke;
+    padding: 60px 30px 50px 30px;
+    height: 550px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    // transition: all .6s ease-in-out;
+
+
+    h1 {
+
+        text-transform: capitalize;
+        font-weight: 550;
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .questions {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        transition: all 3s ease-in-out;
+
+        // height: 306px;
+        // overflow-y: auto;
+
+        &::-webkit-scrollbar {
+
+            display: none;
+        }
+
+        .question-box {
+
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            padding: 10px 5px 10px 5px;
+            transition: all 3s ease-in-out;
+        }
+
+        .visible-info {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+
+            .icon {
+
+                font-weight: bold;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            .subract-icon {
+
+                display: none;
+                font-size: 1.5rem;
+            }
+        }
+
+        .hidden-info {
+
+            margin-top: 5px;
+            display: none;
+            transition: all 3s ease-in-out;
+        
+            .info {
+                font-size: .9rem;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+@keyframes expand {
+    0% {
+
+        height: 53px;
+        transition-duration: 0s;
+    }
+
+    50% {
+
+        height: 80px;
+        transition-duration: 1s;
+    }
+
+    100% {
+
+        height: max-content;
+        transition-duration: 2s;
+        transition-delay: 2s;
+    }
+}
+
