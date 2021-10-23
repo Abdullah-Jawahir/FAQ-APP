@@ -30,7 +30,10 @@ body {
     overflow-y: scroll;
     scroll-behavior: smooth;
 
-    // transition: all .6s ease-in-out;
+    &::-webkit-scrollbar {
+
+        display: none;
+    }
 
 
     h1 {
@@ -47,10 +50,6 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        transition: all 3s ease-in-out;
-
-        // height: 306px;
-        // overflow-y: auto;
 
         &::-webkit-scrollbar {
 
@@ -116,32 +115,9 @@ body {
                     height: max-content;
                     margin-top: 5px;
                 }
-
-
             }
         }
 
-    }
-}
-
-@keyframes expand {
-    0% {
-
-        height: 53px;
-        transition-duration: 0s;
-    }
-
-    50% {
-
-        height: 80px;
-        transition-duration: 1s;
-    }
-
-    100% {
-
-        height: max-content;
-        transition-duration: 2s;
-        transition-delay: 2s;
     }
 }
 
